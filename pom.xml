@@ -75,6 +75,9 @@
 		<compiler.plugin.version>3.8.0</compiler.plugin.version>
 		<ear.plugin.version>3.0.1</ear.plugin.version>
 		<war.plugin.version>3.2.2</war.plugin.version>
+		<source.plugin.version>3.0.1</source.plugin.version>
+		<javadoc.plugin.version>3.0.1</javadoc.plugin.version>
+		<gpg.plugin.version>1.6</gpg.plugin.version>
 
 		<!-- necessary for IntelliJ to function -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -88,7 +91,8 @@
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>${compiler.plugin.version}</version>
 					<configuration>
-						<release>${java.version}</release>
+						<source>${maven.compiler.source}</source>
+						<target>${maven.compiler.target}</target>
 					</configuration>
 				</plugin>
 
@@ -98,6 +102,49 @@
 					<configuration>
 						<failOnMissingWebXml>false</failOnMissingWebXml>
 					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${source.plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${javadoc.plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>${gpg.plugin.version}</version>
+					<executions>
+						<execution>
+							<id>sign-artifacts</id>
+							<phase>verify</phase>
+							<goals>
+								<goal>sign</goal>
+							</goals>
+						</execution>
+					</executions>
 				</plugin>
 			</plugins>
 		</pluginManagement>
