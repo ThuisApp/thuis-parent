@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.thuisapp</groupId>
+	<artifactId>thuis-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>Thuis Parent</name>
+	<description>Parent POM for ThuisApp projects</description>
+	<url>https://github.com/ThuisApp/thuis-parent</url>
+	<organization>
+		<name>ThuisApp</name>
+		<url>https://thuisapp.com</url>
+	</organization>
+	<inceptionYear>2016</inceptionYear>
+
+	<developers>
+		<developer>
+			<id>Edubits</id>
+			<name>Robin Eggenkamp</name>
+			<email>robin@edubits.nl</email>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/ThuisApp/thuis-parent</url>
+		<connection>scm:git:git://github.com/ThuisApp/thuis-parent</connection>
+		<developerConnection>scm:git:git@github.com:ThuisApp/thuis-parent</developerConnection>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>sonatype-snapshots</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+			<snapshots>
+				<updatePolicy>interval:15</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<java.version>1.8</java.version>
+		<javaee.version>8.0</javaee.version>
+		<microprofile.version>2.0.1</microprofile.version>
+		<ejb.version>3.2</ejb.version>
+		<application.xml.version>8</application.xml.version>
+
+		<!-- Application server versions -->
+		<wildfly.version>14.0.1.Final</wildfly.version>
+		<payara.version>5.183</payara.version>
+
+		<!-- Plugin versions -->
+		<compiler.plugin.version>3.8.0</compiler.plugin.version>
+		<ear.plugin.version>3.0.1</ear.plugin.version>
+		<war.plugin.version>3.2.2</war.plugin.version>
+
+		<!-- necessary for IntelliJ to function -->
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+	</properties>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${compiler.plugin.version}</version>
+					<configuration>
+						<release>${java.version}</release>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${war.plugin.version}</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
