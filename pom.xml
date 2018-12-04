@@ -78,6 +78,8 @@
 		<source.plugin.version>3.0.1</source.plugin.version>
 		<javadoc.plugin.version>3.0.1</javadoc.plugin.version>
 		<gpg.plugin.version>1.6</gpg.plugin.version>
+		<nexus-staging.plugin.version>1.6.8</nexus-staging.plugin.version>
+		<gitflow.plugin.version>1.10.0</gitflow.plugin.version>
 
 		<!-- necessary for IntelliJ to function -->
 		<maven.compiler.source>${java.version}</maven.compiler.source>
@@ -135,13 +137,19 @@
 				<plugin>
 					<groupId>org.sonatype.plugins</groupId>
 					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>1.6.8</version>
+					<version>${nexus-staging.plugin.version}</version>
 					<extensions>true</extensions>
 					<configuration>
 						<serverId>ossrh</serverId>
 						<nexusUrl>https://oss.sonatype.org/</nexusUrl>
 						<autoReleaseAfterClose>true</autoReleaseAfterClose>
 					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>com.amashchenko.maven.plugin</groupId>
+					<artifactId>gitflow-maven-plugin</artifactId>
+					<version>${gitflow.plugin.version}</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
