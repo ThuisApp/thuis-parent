@@ -4,3 +4,5 @@ deploy:
   provider: script
   script: mvn deploy -s settings.xml
   skip_cleanup: true
+  on:
+    branch: develop
