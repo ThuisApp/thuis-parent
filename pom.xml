@@ -63,21 +63,19 @@
 
 		<java.version>1.8</java.version>
 		<javaee.version>8.0</javaee.version>
-		<microprofile.version>2.0.1</microprofile.version>
 		<ejb.version>3.2</ejb.version>
 		<application.xml.version>8</application.xml.version>
 
 		<!-- Application server versions -->
-		<wildfly.version>14.0.1.Final</wildfly.version>
 		<quarkus.version>0.16.1</quarkus.version>
 
 		<!-- Plugin versions -->
-		<compiler.plugin.version>3.8.0</compiler.plugin.version>
+		<compiler.plugin.version>3.8.1</compiler.plugin.version>
 		<ear.plugin.version>3.0.1</ear.plugin.version>
-		<war.plugin.version>3.2.2</war.plugin.version>
-		<jar.plugin.version>3.1.0</jar.plugin.version>
-		<source.plugin.version>3.0.1</source.plugin.version>
-		<javadoc.plugin.version>3.0.1</javadoc.plugin.version>
+		<war.plugin.version>3.2.3</war.plugin.version>
+		<jar.plugin.version>3.1.2</jar.plugin.version>
+		<source.plugin.version>3.1.0</source.plugin.version>
+		<javadoc.plugin.version>3.1.0</javadoc.plugin.version>
 		<gpg.plugin.version>1.6</gpg.plugin.version>
 		<nexus-staging.plugin.version>1.6.8</nexus-staging.plugin.version>
 		<gitflow.plugin.version>1.10.0</gitflow.plugin.version>
