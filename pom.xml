@@ -67,7 +67,7 @@
 		<application.xml.version>8</application.xml.version>
 
 		<!-- Application server versions -->
-		<quarkus.version>0.16.1</quarkus.version>
+		<quarkus.version>1.0.1.Final</quarkus.version>
 
 		<!-- Plugin versions -->
 		<compiler.plugin.version>3.8.1</compiler.plugin.version>
@@ -105,7 +105,7 @@
 			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
-				<version>1.18.8</version>
+				<version>1.18.10</version>
 				<scope>provided</scope>
 			</dependency>
 
