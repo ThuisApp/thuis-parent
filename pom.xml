@@ -67,7 +67,7 @@
 		<application.xml.version>8</application.xml.version>
 
 		<!-- Application server versions -->
-		<quarkus.version>1.0.1.Final</quarkus.version>
+		<quarkus.version>1.2.0.Final</quarkus.version>
 
 		<!-- Plugin versions -->
 		<compiler.plugin.version>3.8.1</compiler.plugin.version>
